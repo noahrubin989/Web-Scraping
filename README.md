@@ -1,2 +1,4 @@
 # Web-Scraping
-Web scraping scripts to create datasets
+A wide variety of web scarping scripts I have created to create datasets for further analysis
+
+See my [LinkedIn](https://www.linkedin.com/in/noah-rubin1/) to connect :)
