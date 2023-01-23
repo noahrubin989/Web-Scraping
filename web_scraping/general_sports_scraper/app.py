@@ -54,8 +54,6 @@ def get_url_map(sport: str):
 def sport_scraper(sport: str, stat: str, start_year: int, cutoff_year: int):
     datasets = []
 
-    # Just so we know we have data for sports where the 2023 season has not started yet
-    
     years = [y for y in range(start_year, cutoff_year+1, 1)]
     url_map = get_url_map(sport=sport)
     for y in years:
@@ -73,7 +71,6 @@ def sport_scraper(sport: str, stat: str, start_year: int, cutoff_year: int):
 
 
 def main():
-    # TODO: if else statements to ensure start year and end year are valid. Maybe a helper function called check_years(start, end)
     start_year = 2010
     cutoff_year = 2022
     
