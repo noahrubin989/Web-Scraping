@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
+import streamlit as st
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -91,3 +92,16 @@ def scrape_bball_stats(start_year: int, end_year: int, driver_path: str='/Users/
 
     final = pd.concat(dataframes, axis=0)
     return final
+
+
+@st.experimental_memo
+def convert_df(ds):
+   return ds.to_csv(index=False).encode('utf-8')
+
+def download(ds):
+    csv = convert_df(ds)
+    st.download_button("Download Data",
+                       csv,
+                       "data.csv",
+                       "text/csv",
+                       key='download-csv')
